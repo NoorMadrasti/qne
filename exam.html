@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار قدرات تجريبي</title>
+    <!-- إضافة Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1c1c1e;
+            color: #f0f0f0;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 800px;
+            background-color: #2c2c2e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+        }
+        h2, h3 {
+            color: #ffffff;
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .btn {
+            border-radius: 10px;
+        }
+        .btn-link {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        /* تصميم المربع الذهبي */
+        .golden-box {
+            background-color: gold;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        .golden-box a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<a href="javascript:history.back()" class="btn btn-primary">
+    الرجوع
+</a>
+<body>
+    <div class="container">
+        <h2> اختبار قدرات تجريبي</h2>
+
+        <!-- الأسئلة -->
+        <form id="quiz-form">
+            <!-- السؤال 1 -->
+            <div class="question">
+                <h3>1. ما هو ناتج جمع 125 و 375؟</h3>
+                <div>
+                    <input type="radio" name="q1" value="500"> أ) 500<br>
+                    <input type="radio" name="q1" value="400"> ب) 400<br>
+                    <input type="radio" name="q1" value="450"> ج) 450<br>
+                    <input type="radio" name="q1" value="300"> د) 300<br>
+                </div>
+            </div>
+            <!-- السؤال 2 -->
+            <div class="question">
+                <h3>2. إذا كان العدد x = 7، فما هو ناتج 3x + 5؟</h3>
+                <div>
+                    <input type="radio" name="q2" value="26"> أ) 26<br>
+                    <input type="radio" name="q2" value="30"> ب) 30<br>
+                    <input type="radio" name="q2" value="20"> ج) 20<br>
+                    <input type="radio" name="q2" value="22"> د) 22<br>
+                </div>
+            </div>
+            <!-- السؤال 3 -->
+            <div class="question">
+                <h3>3. ما هو الجذر التربيعي للعدد 81؟</h3>
+                <div>
+                    <input type="radio" name="q3" value="9"> أ) 9<br>
+                    <input type="radio" name="q3" value="8"> ب) 8<br>
+                    <input type="radio" name="q3" value="7"> ج) 7<br>
+                    <input type="radio" name="q3" value="10"> د) 10<br>
+                </div>
+            </div>
+            <!-- السؤال 4 -->
+            <div class="question">
+                <h3>4. إذا كان سعر الكتاب 50 ريالًا، فما هو ثمن 3 كتب؟</h3>
+                <div>
+                    <input type="radio" name="q4" value="100"> أ) 100 ريال<br>
+                    <input type="radio" name="q4" value="150"> ب) 150 ريال<br>
+                    <input type="radio" name="q4" value="200"> ج) 200 ريال<br>
+                    <input type="radio" name="q4" value="300"> د) 300 ريال<br>
+                </div>
+            </div>
+            <!-- السؤال 5 -->
+            <div class="question">
+                <h3>5. ما هو نصف 144؟</h3>
+                <div>
+                    <input type="radio" name="q5" value="72"> أ) 72<br>
+                    <input type="radio" name="q5" value="68"> ب) 68<br>
+                    <input type="radio" name="q5" value="74"> ج) 74<br>
+                    <input type="radio" name="q5" value="70"> د) 70<br>
+                </div>
+            </div>
+
+            <!-- زر تقديم الاختبار -->
+            <button type="button" class="btn btn-warning btn-block" onclick="submitQuiz()">اعلام الدرجة</button>
+        </form>
+
+        <!-- عرض النتيجة -->
+        <div id="result" style="display: none;">
+            <h3>نتيجتك:</h3>
+            <p id="score"></p>
+        </div>
+
+        <!-- رابط الاختبار في مربع ذهبي -->
+        <div class="golden-box">
+            <a href="https://jehad.academy/quizzes/%D8%A7%D8%AE%D8%AA%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%AF%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A/?gad_source=1&gclid=CjwKCAiAxKy5BhBbEiwAYiW---Ep_zKObAjkZXSP06QMLfWpf8MQGFJhvB3UQJjSLHDhieHmvEUH1hoCt-sQAvD_BwE" target="_blank">اكمل اختبار القدرات</a>
+        </div>
+    </div>
+
+    <!-- إضافة Bootstrap JS و jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function submitQuiz() {
+            var score = 0;
+
+            // الإجابات الصحيحة
+            var correctAnswers = {
+                q1: "500",
+                q2: "26",
+                q3: "9",
+                q4: "150",
+                q5: "72"
+            };
+
+            // تحقق من الإجابات
+            for (var question in correctAnswers) {
+                var userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // عرض النتيجة
+            document.getElementById("result").style.display = "block";
+            document.getElementById("score").innerText = `لقد أجبت على ${score} من 5 أسئلة بشكل صحيح.`;
+        }
+    </script>
+</body>
+</html>
